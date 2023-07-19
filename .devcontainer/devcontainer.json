@@ -1,0 +1,28 @@
+{
+  "name": "KubeBuilder Example",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest"
+    }
+  },
+
+  "postCreateCommand": "kind create cluster || true",
+
+  "mounts": [
+    {
+      "type": "volume",
+      "source": "kubebuilder-example",
+      "target": "/home/vscode"
+    }
+  ],
+
+  "customizations": {
+    "devpod": {
+      "prebuildRepository": "k8s.io/prebuilds"
+    }
+  }
+}
