@@ -10,7 +10,7 @@
     }
   },
 
-  "postCreateCommand": "kind create cluster || true",
+  "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
 
   "mounts": [
     {
