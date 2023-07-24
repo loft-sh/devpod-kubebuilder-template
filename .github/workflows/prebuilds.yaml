@@ -13,7 +13,6 @@ permissions:
 
 jobs:
   publish-image:
-    if: startsWith(github.ref, 'refs/tags/v') == true
     runs-on: ubuntu-22.04
 
     permissions:
@@ -23,18 +22,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - id: get_version
-        run: |
-          RELEASE_VERSION=$(echo $GITHUB_REF | sed -nE 's!refs/tags/!!p')
-          echo "::set-output name=release_version::$RELEASE_VERSION"
-      - name: Get Docker tags
-        id: docker_meta
-        uses: docker/metadata-action@v4
-        with:
-          images: ghcr.io/loft-sh/loft-router
-          tags: |
-            type=semver,pattern={{version}}
-            type=raw,value=latest
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -56,4 +43,4 @@ jobs:
           devpod provider add docker
           
           # Build image via local docker
-          devpod build . --repository ghcr.io/loft-sh/devpod-kubebuilder-template
+          devpod build . --repository "ghcr.io/loft-sh/devpod-kubebuilder-template" --platform "linux/amd64,linux/arm64"

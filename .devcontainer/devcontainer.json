@@ -15,7 +15,7 @@
   "mounts": [
     {
       "type": "volume",
-      "source": "kubebuilder-example",
+      "source": "kubebuilder-template-${devcontainerId}",
       "target": "/home/vscode"
     }
   ],
