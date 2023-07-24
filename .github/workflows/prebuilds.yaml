@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - ".github/workflows/prebuilds.yaml"
       - ".devcontainer/**"
 
 permissions:
@@ -44,7 +45,7 @@ jobs:
           registry: ghcr.io
           username: loft-sh
           password: ${{ secrets.GITHUB_TOKEN }}
-      - id: Install DevPod
+      - name: Install DevPod
         run: |
           curl -L -o devpod "https://github.com/loft-sh/devpod/releases/latest/download/devpod-linux-amd64" && \
               sudo install -c -m 0755 devpod /usr/local/bin && \
