@@ -22,7 +22,7 @@
 
   "customizations": {
     "devpod": {
-      "prebuildRepository": "k8s.io/prebuilds"
+      "prebuildRepository": "ghcr.io/loft-sh/devpod-kubebuilder-template"
     }
   }
 }
