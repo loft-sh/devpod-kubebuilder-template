@@ -14,3 +14,6 @@ RUN bash -c "curl -s https://get.helm.sh/helm-v3.12.2-linux-${TARGETARCH}.tar.gz
 
 # Install kubebuilder
 RUN curl -L -o kubebuilder "https://go.kubebuilder.io/dl/latest/$(go env GOOS)/$(go env GOARCH)" && chmod +x kubebuilder && mv kubebuilder /usr/local/bin/
+
+# Install bash-complete to make kubectl autocomplete work
+RUN apt-get update && apt-get install bash-completion -y && rm -rf /var/lib/apt/lists/*

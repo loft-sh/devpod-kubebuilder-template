@@ -1,6 +1,7 @@
 mkdir -p $HOME/.kube
 kubectl completion bash > /home/vscode/.kube/completion.bash.inc
 printf "
+source /usr/share/bash-completion/bash_completion
 source $HOME/.kube/completion.bash.inc
 alias k=kubectl
 complete -F __start_kubectl k
