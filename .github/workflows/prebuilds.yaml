@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     permissions:
-      id-token: write # This is the key for OIDC cosign!
+      id-token: write
       packages: write
       contents: read
 
