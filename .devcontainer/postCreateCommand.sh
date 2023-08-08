@@ -13,4 +13,4 @@ alias k=kubectl
 complete -F __start_kubectl k
 " >> $HOME/.zshrc
 
-kind create cluster || true
+kind create cluster || kind get kubeconfig > $HOME/.kube/config
