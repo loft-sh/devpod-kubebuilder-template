@@ -1,12 +1,13 @@
 {
   "name": "KubeBuilder Example",
   "build": {
-    "dockerfile": "Dockerfile"
+    "dockerfile": "./Dockerfile"
   },
 
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest"
+      "version": "latest",
+      "moby": true
     }
   },
 
