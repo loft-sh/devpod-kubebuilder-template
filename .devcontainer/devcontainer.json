@@ -13,14 +13,6 @@
 
   "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
 
-  "mounts": [
-    {
-      "type": "volume",
-      "source": "kubebuilder-template-${devcontainerId}",
-      "target": "/home/vscode"
-    }
-  ],
-
   "customizations": {
     "devpod": {
       "prebuildRepository": "ghcr.io/loft-sh/devpod-kubebuilder-template"
